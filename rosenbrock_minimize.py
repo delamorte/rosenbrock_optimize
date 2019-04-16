@@ -38,3 +38,7 @@ res_Powell = minimize(rosenbrock, x0, method='Powell',
                       options={'disp': True, 'maxiter': 10**4})
 print('Solution: ')
 print(res_Powell.x)
+
+d = ({'Nelder-Mead': res_NM.nit, 'SLSQP': res_SLSQP.nit,
+      'Powell': res_Powell.nit})
+print('\nMethod with the least amount of iterations was: ' + min(d, key=d.get))
